@@ -3,21 +3,16 @@ body
 	background-color: rgb(243, 255, 243);
 	font-family: 'bookman';
 }
+
 h1
 {
 	font-family: 'garamond';
 	color: PaleGreen;
-	
 }
 
 p
 {
 	font-size: 20px;
-}
-	
-span
-{
-	display: inline-block;
 }
 
 ul, ol  
@@ -25,30 +20,29 @@ ul, ol
 	margin-bottom: 75px;
 }
 
+footer  
+{
+	border-style: solid none;
+}
+
 .nav ul 
 {
 	list-style-type: none;
-	width: 400px;
-	border-bottom: 2px solid black;
-	border-top: 2px solid black;
-	margin: 0 auto;
+	margin: 0;
 	padding: 0;
+	border-style: solid none;
 }
 
-.nav li {
-  font-family: verdana;
-  display: inline-block;
-  width: 95px;
-}
- 
-.nav a {
-  text-decoration: none;
-  display: block;
-}
-
-.rightPic
+.nav li
 {
-	float: right;
+	display: inline-block;
+	text-align: center;
+	width: 300px;
+}
+
+.nav a
+{
+	text-decoration: none;
 }
 
 .center, h1   
@@ -75,7 +69,6 @@ ul, ol
 	border-bottom: 1px solid black;
 }
 
-
 .food, .servings
 {
 	width: 200px;
@@ -85,4 +78,14 @@ ul, ol
 .food, .servings, .quantity
 {
 	display: inline-block;
+}
+
+.blogs ul 
+{
+	list-style-type: none;
+}
+
+.blogs a 
+{
+	text-decoration: none;
 }
