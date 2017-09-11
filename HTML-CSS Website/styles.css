@@ -2,6 +2,9 @@ body
 {
 	background-color: rgb(243, 255, 243);
 	font-family: 'bookman';
+	margin: 0px;
+    overflow-x: hidden;
+    overflow-y: scroll;
 }
 
 h1
@@ -10,19 +13,32 @@ h1
 	color: PaleGreen;
 }
 
+img
+{
+	width: 1270px; 
+	height: 200px
+}
+
 p
 {
 	font-size: 20px;
+	margin-left: 10px;
 }
 
 ul, ol  
 {
-	margin-bottom: 75px;
+	margin-bottom: 100px;
 }
 
 footer  
 {
 	border-style: solid none;
+	margin-bottom: 8px;
+}
+
+.nav 
+{
+	padding-bottom: 35px; 
 }
 
 .nav ul 
@@ -51,8 +67,8 @@ footer
 }
 
 .table 
-{
-	display: table; 
+{ 
+	display: table;
 	float: right;
 	border: 2px solid black; 
 	font-family: verdana;
