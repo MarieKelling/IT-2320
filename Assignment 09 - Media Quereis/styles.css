@@ -1,0 +1,196 @@
+body
+{
+	background-color: rgb(243, 255, 243);
+	font-family: 'bookman';
+	margin: 0px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+h1
+{
+	font-family: 'garamond';
+	color: PaleGreen;
+}
+
+img
+{
+	width: 1270px; 
+	height: 200px
+}
+
+p
+{
+	font-size: 20px;
+	margin-left: 10px;
+}
+
+ul, ol  
+{
+	margin-bottom: 100px;
+} 
+
+footer  
+{
+	border-style: solid none;
+	margin-bottom: 8px;
+	margin-top: 40px;
+}
+
+.nav 
+{
+	padding-bottom: 35px; 
+}
+
+.nav ul 
+{
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	border-style: solid none;
+}
+
+.nav li
+{
+	display: inline-block;
+	text-align: center;
+	width: 300px;
+}
+
+.nav a
+{
+	text-decoration: none;
+}
+
+.center, h1   
+{
+	text-align: center;
+}
+
+.table 
+{ 
+	display: table;
+	float: right;
+	border: 3px solid black;  
+	font-family: verdana;
+    margin-left: 30px;
+}
+
+.row1
+{
+	font-weight: bold;
+}
+
+.row1, .row
+{
+	border-bottom: 1px solid black;
+}
+
+.food, .servings
+{
+	width: 200px;
+	border-right: 1px solid black;
+}
+
+.food, .servings, .quantity
+{
+	display: inline-block;
+}
+
+.blogs ul 
+{
+	list-style-type: none;
+}
+
+.blogs li 
+{
+	width: 150px;
+}
+
+.blogs a 
+{
+	text-decoration: none;
+}
+
+.button
+{
+	margin-left: 10px;
+}
+
+.emphasize
+{
+	font-size: 20px;
+	font-weight: bold; 
+}
+
+.upsize
+{
+	font-size: 20px; 
+	font-style: italic;
+}
+
+/*-------------------------------------------------------Media Queries--------------------------------------------------------*/
+
+@media screen and (max-width: 767px) 
+{
+	body
+	{
+		background-color: LightCyan;
+		font-family: 'Verdana';
+	}
+	
+	img
+	{ 
+		width: 800px; 
+		height: 150px;
+    }
+	.table 
+	{
+		float: left;
+		margin-top: 30px;
+		margin-bottom: 30px;
+		display: block; 
+		width: 100%
+	}
+	
+	
+	.nav li
+	{
+		display: block;
+	}
+			
+}
+
+@media screen and (min-width: 768px) 
+{
+	
+    body
+	{
+		background-color: AliceBlue;
+		font-family: 'bookman';
+		
+	}
+	
+	img
+	{ 
+	width: 1270px; 
+	height: 200px; 
+	}
+	.table 
+	{
+		float: right;
+		margin-top: 30px;
+		margin-bottom: 25px;
+		
+	}
+}
+
+
+
+
+
+
+
+
+
+
