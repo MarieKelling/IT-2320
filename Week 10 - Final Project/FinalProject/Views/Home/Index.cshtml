@@ -1,0 +1,63 @@
+﻿@model FinalProject.Models.HomeViewModel
+
+<html>
+
+<head>
+    <link href="~/Styles/Home.css" rel="stylesheet" />
+    <title>Final Project</title>
+</head>
+
+<body>
+    <script src="~/Scripts/jquery-2.1.1.min.js"></script>
+    <script src="~/Scripts/jquery-ui.min.js"></script>
+    <script src="~/Scripts/Home.js"></script>
+
+    <div class="output"></div>
+
+    <div class="home">
+
+        <h3>Create Account</h3>
+
+        <div class="create">
+            Username:           <input type="text" class="username" />
+            Password:           <input type="text" class="password" />
+            Email:              <input type="text" class="emailadr" />
+            Email Confirmation: <input type="text" class="emailcon" />
+            <input type="button" class="createButton" value="Create Account" />
+        </div>
+
+        <h3>Log In</h3>
+
+        <div class="login">
+            Username: <input type="text" class="username" />
+            Password: <input type="text" class="password" />
+            <input type="button" class="loginButton" value="Log In" />
+        </div>
+
+    </div>
+
+    <div class="accountInfo">
+
+        <h3>Account Information</h3>
+
+        <div class="updateInfo">
+            Account Username: <input type="text" class="getInfoTextbox" /> <input type="button" class="getInfoButton" value="Get Account Info" />
+            AccountName       <br />
+            Email Address <input type="text" class="updateTextbox" /><input type="button" class="updateButton" value="Update" />
+            Current GPA   <input type="text" class="updateTextbox" /><input type="button" class="updateButton" value="Update" />
+        </div>
+
+
+        <div class="addInfo">
+            ElementName   <input type="text" class="addTextbox" />
+            ElementValue  <input type="text" class="addTextbox" />
+                          <input type="button" class="addButton" value="Add" />
+        </div>
+
+
+    </div>
+
+
+</body>
+
+</html> 
