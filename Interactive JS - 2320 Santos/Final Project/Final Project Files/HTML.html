@@ -1,0 +1,50 @@
+@model FinalProject.Models.HomeViewModel
+
+<html>
+
+    <head>
+        <link href="~/Styles/Home.css" rel="stylesheet" />
+        <title>Final Project</title>
+    </head>
+
+    <body>
+        <script src="~/Scripts/jquery-2.1.1.min.js"></script>
+        <script src="~/Scripts/jquery-ui.min.js"></script>
+        <script src="~/Scripts/Home.js"></script>
+       
+
+            <h3>Log In</h3>
+
+             
+                <div class="login">Username: <input type="text" class="username" /></div><br />
+                <div class="login">Password: <input type="text" class="password" /></div><br />
+
+            <input type="button" class="submitLogIn" value="Log In" /><br /> 
+
+            <h3>Create New Account</h3>
+
+            <div class="create">Username:           <input type="text" class="username" /></div><br />
+            <div class="create">Password:           <input type="text" class="password" /></div><br />
+            <div class="create">Email:              <input type="text" class="emailadr" /></div><br />
+            <div class="create">Email Confirmation: <input type="text" class="emailcon" /></div><br />
+
+            <input type="button" class="submitCreate" value="Create Account" /><br />
+
+
+        <div class="accountInfo">
+            <div>Account Username: <input type="text" class="aInfo"/>
+                <input type="button" class="infoButton" value="Get Info" /></div><br />
+            <div>AccountName</div><br />
+            <div>
+                Email Address <input type="text" class="aInfo" />
+                <input type="button" class="updateButton" value="Update" />
+            </div><br />
+            <div>
+                Current GPA <input type="text" class="aInfo" />
+                <input type="button" class="updateButton" value="Update" />
+            </div>
+        </div>
+
+    </body>
+
+</html>

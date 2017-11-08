@@ -1,0 +1,26 @@
+﻿2.board
+{
+    display: table;
+    border: 1px solid black;
+}
+
+.board > .row
+{
+    display: table;
+}
+
+.board > .row > .cell
+{
+    width: 80px;
+    height: 80px;
+    border: 1px solid black;
+    display: inline-block;
+}
+
+.board > .row > .highlight
+{
+    width: 80px;
+    height: 80px;
+    border: 1px solid lime;
+    display: inline-block;
+}

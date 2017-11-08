@@ -1,0 +1,48 @@
+.home 
+{
+    border: 1px solid black;
+    display: inline-block;
+    margin-left: 10px;
+    width: 60%;
+}
+
+.accountInfo 
+{
+    border: 1px solid black;
+    display: inline-block;
+    margin-left: 10px;
+    margin-top: 10%;
+    width: 60%;
+}
+
+.submit
+{
+    display:block;
+    margin-left: 30%;
+    width:50%;
+}
+
+div > .login, div > .create 
+{
+    display:block;
+    margin-left: 30%;
+    
+}
+
+div > .inputBreak 
+{
+    
+}
+
+input 
+{
+    display: block;
+    margin-left: 40%;
+}
+
+input > .infoButton 
+{
+    display:inline-block;
+} 
+
+
