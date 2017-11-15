@@ -4,6 +4,7 @@
     text-align: center;
     margin-top: 1%;
     margin-bottom: 2%;
+    color: red;
 }
 
 .home, .accountInfo 
@@ -30,12 +31,13 @@
     width: 50%;
 }
 
-h3 
+h3, h2 
 {
+    display: block;
     text-align: center;
 }
 
-input 
+input  
 {
     display: block;
     margin-left: 35%;

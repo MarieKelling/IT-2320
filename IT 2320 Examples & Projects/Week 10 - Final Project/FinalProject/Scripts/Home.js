@@ -4,7 +4,7 @@ Home.AppendToOutput = function (preMessage, postMessage) {
     $(".output").append("<div>" + preMessage + ": " +  postMessage + "</div>");
 }
 
-Home.CreateAccountClick = function ()
+Home.CreateAccountClick = function () 
 {
     $(".output").empty();
 
@@ -13,10 +13,10 @@ Home.CreateAccountClick = function ()
             url: "Home/CreateAccount",
             data:
             {
-                "Username": $(".username").val(),
-                "Password": $(".password").val(),
-                "EmailAdd": $(".emailadr").val(),
-                "EmailCon": $(".emailcon").val()
+                "Username": $(".usernameCreate").val(),
+                "Password": $(".passwordCreate").val(),
+                "EmailAdd": $(".emailadrCreate").val(),
+                "EmailCon": $(".emailconCreate").val()
             },
             success: function (RawData)
             {
@@ -60,8 +60,8 @@ Home.LoginClick = function ()
             url: "Home/Login",
             data:
             {
-                "Username": $(".username").val(),
-                "Password": $(".password").val()
+                "Username": $(".usernameLog").val(),
+                "Password": $(".passwordLog").val()
             },
             success: function (RawData)
             {
@@ -71,6 +71,7 @@ Home.LoginClick = function ()
                 if (response.Message == "Success") {
                     Home.AppendToOutput(response.Message, "You have successfully logged in");
                     Home.ShowAccount()
+                    Home.AccountInfoDisplay();
                 }
                 else
                 {
@@ -84,6 +85,11 @@ Home.LoginClick = function ()
                 }
             }
         });
+}
+
+Home.AccountInfoDisplay = function ()
+{
+    $(".account-name-value").append("asdf");
 }
 
 Home.AccountInfoClick = function ()
@@ -102,15 +108,16 @@ Home.AccountInfoClick = function ()
             success: function (RawData)
             {
                 var response = JSON.parse(RawData);
-                alert("Raw Data: " + RawData);
-                Home.AppendToOutput(response.Message, "JSON Payload of Account Information: " + response.Payload); 
+                var payload = JSON.parse(response.Payload);
+                Home.AppendToOutput(response.Message, "JSON Payload of Account Information: Username - " + payload.account.username + "<br/>" +
+                                                                                           "Password - " + payload.account.password + "<br/>"); 
             }
         });
 }
 
 Home.AddUpdateClick = function () {
 
-    $(".output").empty();
+    $(".output").empty();  
 
     $.ajax({
 

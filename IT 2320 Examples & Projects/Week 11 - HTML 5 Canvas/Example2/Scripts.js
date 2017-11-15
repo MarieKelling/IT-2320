@@ -8,29 +8,29 @@ Main.MousePressed = false;
 Main.MX = 0;
 Main.MY = 0;
 
-Main.Box = function(x, y, w, h)
-{
-	this.X = x;
+Main.Box = function(x, y, w, h)	//creates a class called box, to instanitate objects of type box 
+{														//Every box has an x & y cooridnate, width, & a height
+	this.X = x;								//Takes constructor params & sets member variables
 	this.Y = y;
 	this.Width = w;
 	this.Height = h;
 
-	this.IsSelected = function()
+	this.IsSelected = function()						//Instance method
 	{
-		if (!Main.MousePressed) return false;
-		var withinXAxisCoordinates = Main.MX > this.X && Main.MX < (this.X + this.Width);
-		var withinYAxisCoordinates = Main.MY > this.Y && Main.MY < (this.Y + this.Height);
-		return withinXAxisCoordinates && withinYAxisCoordinates;
+		if (!Main.MousePressed) return false;	//If mouse isn't pressed - false
+		var withinXAxisCoordinates = Main.MX > this.X && Main.MX < (this.X + this.Width);		//Checks to make sure mouse is inside box horizontally
+		var withinYAxisCoordinates = Main.MY > this.Y && Main.MY < (this.Y + this.Height);		//Checks to make sure mouse is inside box verticallly 
+		return withinXAxisCoordinates && withinYAxisCoordinates;										//Returns true if inside the box 
 	}
 }
 
-Main.Boxes = [
+Main.Boxes = [								//Creates an array of boxes - each w/ a dif x,y cooridnate & size 
 	new Main.Box(10, 10, 75, 75),
 	new Main.Box(150, 100, 150, 150),
 	new Main.Box(300, 300, 250, 250)
 ];
 
-Main.Canvas.onmousemove = function(event)
+Main.Canvas.onmousemove = function(event)		//Keeps track of the x,y cooridnate of where the mouse is on the screen 
 {
 	if (event.offsetX)
 	{
@@ -84,6 +84,6 @@ window.requestAnimFrame = (function(callback)
 $(document).ready(function()
 {
 	Main.Animate();
-	Main.Canvas.addEventListener('mouseup', function(mouseEvent) { Main.MouseUp(mouseEvent); });
-	Main.Canvas.addEventListener('mousedown', function(mouseEvent) { Main.MouseDown(mouseEvent); });
+	Main.Canvas.addEventListener('mouseup', function(mouseEvent) { Main.MouseUp(mouseEvent); });			//When mouse is released, 'MouseUp' function executes 
+	Main.Canvas.addEventListener('mousedown', function(mouseEvent) { Main.MouseDown(mouseEvent); }); //When mouse is pressed, 'MouseDown' function executes
 });
