@@ -1,0 +1,129 @@
+@font-face 
+{
+    font-family: myFont;
+    src: url(Belbott0.ttf); 
+}
+
+@keyframes page 
+{
+	from {background-color: Lavender;}
+    to {background-color: LavenderBlush;}
+
+}
+
+@keyframes div 
+{
+	from {background-color: Black;} 
+    to {background-color: White;}
+
+}
+
+.page
+{
+	animation-name: page;
+    animation-duration: 5s;
+}
+
+.hello
+{
+	font-family: myFont;
+	font-size: 25px;
+	text-align: center; 
+}
+
+.transition-box
+{
+	display: block;
+	text-align: center;
+	margin: auto;
+	width: 15%;
+	margin-top: 20px;
+	border: 1px solid black;
+	transition: width 3s;
+}
+
+.transition-box:hover
+{
+	width: 300px;
+	height: 40px;
+	font-weight: bold;
+	font-size: 30px;
+	border-radius: 25px;
+}
+
+button
+{
+	display: block; 
+	margin: auto;
+	width: 15%;
+	margin-top: 8%;
+	 
+}
+
+
+.button1
+{
+	display: block;
+	padding: 20px;
+	transition: width 3s, transform 3s;
+}
+
+.button1:hover 
+{
+	width: 300px;
+	transform: rotate(360deg);
+	font-weight: bold;
+	border-radius: 10px;
+}
+
+
+.button2
+{
+	display: block;
+	padding: 30px;
+	margin-top: 9%;
+	transition: transform 3s;
+}
+
+.button2:hover
+{
+	transform: rotateY(360deg);
+	border: 2px solid red;
+}
+
+.left, .right 
+{
+	display: inline-block;
+	margin: auto;
+	width: 25%;
+	margin-top: 7%;
+	padding-top: 20px;
+	padding-bottom: 40px;
+	text-align: center;
+	border: 2px solid black;
+}
+
+.right
+{
+	float: right;
+}
+
+.right:hover
+{
+	background: linear-gradient(to bottom right, red, orange, yellow, blue, green, purple);
+	font-weight: bold;
+}
+
+.left:hover
+{
+	animation-name: div; 
+    animation-duration: 5s;
+	font-weight: bold;
+}
+
+
+
+
+
+
+
