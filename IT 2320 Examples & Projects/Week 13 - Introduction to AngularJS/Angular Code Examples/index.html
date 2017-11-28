@@ -1,0 +1,66 @@
+<html>
+
+	<head>
+		<title>AngularJS</title>
+		<link rel="stylesheet" type="text/css" href="styles.css">
+		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+		<script src="scripts.js"></script>
+	</head>
+
+	<body>
+		<div ng-app="" ng-controller="personController">		//Refers to the JavaScript - binds the $scope to the angular app in the HTML
+																								//Gives access to refer to everything inside of $scope
+			<h1>Introduction To AngularJS</h1>
+
+			<div class="divider"></div>
+
+			<h3>Basic Data Binding</h3>
+		 	<div>Username</div>
+			<input type="text" ng-model="username" />				//Marks the input element as a data model  - so another element can use the value of this model 
+		 	<div class="username" ng-bind="username"></div>	//Binds this element to the model above - binds the inner HTML of this div to the value in the model 
+
+			<div class="divider"></div>
+
+			<h3>Using Controllers</h3>
+			<div>The Current Time Is: {{viewModel.currentTime}}</div>		//Angular Expression - refers to JS inside of the controller 
+																													//expressions are how you access the $scope/JS 
+			<div class="divider"></div>
+
+			<h3>Combination of Controller and Data Binding</h3>
+			<div>First Name:<div>
+			<input class="text-input" type="text" ng-model="viewModel.firstName">	//Declares model w/ value of the firstName attribute on the viewModel object
+			<div>Last Name:<div>
+			<input class="text-input" type="text" ng-model="viewModel.lastName">	//Declares model w/ value of the lastName attribute on the viewModel object 
+			
+			<div>{{viewModel.firstName + " " + viewModel.lastName}}</div>			//Expression that concatenates the first & last name values 
+																																//these values can be changed in real time & the expression then changes in sync
+			<div class="divider"></div>
+
+			<h3>Controller Methods</h3>
+			<div>The sum of 2 and 3 is: {{viewModel.Add(2,3)}}</div>						//Expression that invokes the Add function - resolves & dispays result in the div
+
+			<div class="divider"></div>
+
+			<h3>Repeat Directive</h3>
+			<div ng-repeat="item in viewModel.list">{{item.name + " " + item.value}}</div>	//Creates 3 divs, 1 for each item in the list 
+
+			<div class="divider"></div>
+
+			<h3>Filters</h3>
+			<div ng-repeat="item in viewModel.list | orderBy:'name'">{{item.name + " " + item.value | lowercase}}</div>	//Contains a sorting specification 
+
+			<div class="divider"></div>
+		</div>
+
+	</body>
+
+</html>
+
+
+
+
+//		"item in viewModel.list" --> looks & acts like a for each loop 
+	// item - the current object referred to at each iteration
+	// viewModel - the collection you are interating through (must be an array) 
+
+
