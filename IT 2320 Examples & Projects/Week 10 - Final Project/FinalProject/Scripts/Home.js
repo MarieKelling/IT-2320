@@ -13,15 +13,15 @@ Home.CreateAccountClick = function ()
             url: "Home/CreateAccount",
             data:
             {
-                "Username": $(".usernameCreate").val(),
-                "Password": $(".passwordCreate").val(),
-                "EmailAdd": $(".emailadrCreate").val(),
-                "EmailCon": $(".emailconCreate").val()
+                "Username": $(".username-create").val(),
+                "Password": $(".password-create").val(),
+                "EmailAdd": $(".emailadr-create").val(),
+                "EmailCon": $(".emailcon-create").val()
             },
             success: function (RawData)
             {
                 var response = JSON.parse(RawData)
-                alert("Raw Data: " + RawData);
+                //alert("Raw Data: " + RawData);
 
                 if (response.Message == "Success") {
                     Home.AppendToOutput(response.Message, "Congratulations! Account Successfully Created");
@@ -66,7 +66,7 @@ Home.LoginClick = function ()
             success: function (RawData)
             {
                 var response = JSON.parse(RawData)
-                alert("Raw Data: " + RawData);
+                //alert("Raw Data: " + RawData);
 
                 if (response.Message == "Success") {
                     Home.AppendToOutput(response.Message, "You have successfully logged in");
@@ -89,7 +89,7 @@ Home.LoginClick = function ()
 
 Home.AccountInfoDisplay = function ()
 {
-    $(".account-name-value").append("asdf");
+    $(".account-name").append($(".usernameLog").val());
 }
 
 Home.AccountInfoClick = function ()
@@ -134,7 +134,7 @@ Home.AddUpdateClick = function () {
         success: function (RawData)
         {
             var response = JSON.parse(RawData);
-            alert("Raw Data: " + RawData);
+            //alert("Raw Data: " + RawData);
 
             if (response.Message == "Success") {
                 Home.AppendToOutput(response.Message, "Account has been successfully updated");
@@ -155,10 +155,10 @@ Home.ShowAccount = function () {
 
 $(document).ready(function ()
 {
-    $(".createButton").click(Home.CreateAccountClick);
-    $(".loginButton").click(Home.LoginClick); 
-    $(".getInfoButton").click(Home.AccountInfoClick);
-    $(".addButton").click(Home.AddUpdateClick); 
+    $(".create-button").click(Home.CreateAccountClick);
+    $(".login-button").click(Home.LoginClick); 
+    $(".add-button").click(Home.AddUpdateClick); 
+    //$(".getInfoButton").click(Home.AccountInfoClick);
 
     $(".home").show();
     $(".accountInfo").hide();
