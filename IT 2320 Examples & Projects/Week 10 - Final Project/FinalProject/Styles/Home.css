@@ -25,10 +25,14 @@
 .create-button, .login-button, .add-button
 {
     display: block;
-    margin-left: 30%;
-    margin-top: 3%;
-    margin-bottom: 2%;
-    width: 50%;
+    font-family: "Big Caslon";
+    font-size: 15px;
+    border: 1px solid black;
+    border-radius: 15px;
+    background-color: aliceblue;
+    margin: 3% 2% 2% 30%;
+    padding: 20px;
+    width: 40%;
 }
 
 h3, h2 
@@ -37,14 +41,22 @@ h3, h2
     text-align: center;
 }
 
+h2
+{
+    font-family: Bookman;
+    font-size: 30px;
+}
+
 input  
 {
     display: block;
     margin-left: 35%;
 }
 
-.account-name, .email-info, .password-info 
+.account-name, .account-email, .account-password, .account-attributes  
 {
     display: block;
     text-align: center;
+    font-weight: bold;
+    padding-bottom: 10px;
 }

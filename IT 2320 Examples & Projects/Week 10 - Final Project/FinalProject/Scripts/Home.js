@@ -24,8 +24,7 @@ Home.CreateAccountClick = function ()
                 //alert("Raw Data: " + RawData);
 
                 if (response.Message == "Success") {
-                    Home.AppendToOutput(response.Message, "Congratulations! Account Successfully Created");
-                    Home.ShowAccount()
+                    Home.AppendToOutput(response.Message, "Congratulations! Account Successfully Created. Please Log In Below");
                 }
                 else {
                     if (response.Username == "Invalid") {
@@ -60,13 +59,12 @@ Home.LoginClick = function ()
             url: "Home/Login",
             data:
             {
-                "Username": $(".usernameLog").val(),
-                "Password": $(".passwordLog").val()
+                "Username": $(".username-log").val(),
+                "Password": $(".password-log").val()
             },
             success: function (RawData)
             {
                 var response = JSON.parse(RawData)
-                //alert("Raw Data: " + RawData);
 
                 if (response.Message == "Success") {
                     Home.AppendToOutput(response.Message, "You have successfully logged in");
@@ -87,30 +85,31 @@ Home.LoginClick = function ()
         });
 }
 
+
 Home.AccountInfoDisplay = function ()
 {
-    $(".account-name").append($(".usernameLog").val());
-}
-
-Home.AccountInfoClick = function ()
-{
-    $(".output").empty();
+    $(".output").empty(); 
 
     $.ajax
         ({
             url: "Home/GetAccountInformation",
             data:
             {
-                "Username": $(".getInfoTextbox").val() 
+                "Username": $(".username-log").val()
 
+                //($(".username-create").val() || $(".username-log").val())
             },
 
             success: function (RawData)
             {
                 var response = JSON.parse(RawData);
-                var payload = JSON.parse(response.Payload);
-                Home.AppendToOutput(response.Message, "JSON Payload of Account Information: Username - " + payload.account.username + "<br/>" +
-                                                                                           "Password - " + payload.account.password + "<br/>"); 
+                var payload = JSON.parse(response.Payload); 
+  
+                $(".account-name").append(payload.account.username);
+                $(".account-email").append(payload.account.emailadd);
+                $(".account-password").append(payload.account.password); 
+                //$(".account-attributes").append("<div>" + payload + "</div>");
+
             }
         });
 }
@@ -125,19 +124,22 @@ Home.AddUpdateClick = function () {
 
         data: 
         {
-            "Username": $(".username").val(),
+            "Username": $(".username-log").val(),
             "ElementName" : $(".addElementName").val(),
-            "ElementValue": $(".addElementValue").val()
+            "ElementValue": $(".addElementValue").val() 
         
         },
 
         success: function (RawData)
         {
             var response = JSON.parse(RawData);
-            //alert("Raw Data: " + RawData);
+            var payload = JSON.parse(response.Payload); 
 
             if (response.Message == "Success") {
                 Home.AppendToOutput(response.Message, "Account has been successfully updated");
+                $(".account-attributes").append($(".addElementName").val());
+                $(".account-attributes").append($(".addElementValue").val());
+
             }
             else  {
                 Home.AppendToOutput(response.Message, "Username does not exist or was not entered in the correct format, Element Name cannot contain spaces");
@@ -158,7 +160,6 @@ $(document).ready(function ()
     $(".create-button").click(Home.CreateAccountClick);
     $(".login-button").click(Home.LoginClick); 
     $(".add-button").click(Home.AddUpdateClick); 
-    //$(".getInfoButton").click(Home.AccountInfoClick);
 
     $(".home").show();
     $(".accountInfo").hide();

@@ -3,6 +3,7 @@
   <username>mariek</username>
   <password>mariek</password>
   <emailadd>@</emailadd>
-  <favoriteColor>blue</favoriteColor>
-  <FavFood>pancakes</FavFood>
+  <favFood>cookies</favFood>
+  <favNum>3</favNum>
+  <favTeam>Indians</favTeam>
 </account>
